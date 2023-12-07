@@ -142,64 +142,30 @@
             android:textStyle="bold"
             android:textSize="18sp"/>
 
-        <Button
-            android:id="@+id/loose_button"
-            android:layout_width="105dp"
-            android:layout_height="48dp"
+        <LinearLayout
+            android:id="@+id/button_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_marginStart="25dp"
-            android:text="Loose Weight"
-            android:textSize="12sp"
-            android:layout_below="@id/select_title"
-            android:background="@drawable/rounded_select_button">
-        </Button>
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="25dp"
+            android:layout_below="@id/select_title">
 
-        <Button
-            android:id="@+id/gain_button"
-            android:layout_width="95dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="10dp"
-            android:text="Gain Weight"
-            android:textSize="12sp"
-            android:textColor="@color/white"
-            android:layout_below="@id/select_title"
-            android:layout_toRightOf="@id/loose_button"
-            android:background="@drawable/rounded_selected_select_button">
-        </Button>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_buttons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                tools:itemCount="4"
+                android:orientation="horizontal"/>
 
-        <Button
-            android:id="@+id/bodybuild_button"
-            android:layout_width="100dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="10dp"
-            android:text="Body Building"
-            android:textSize="12sp"
-            android:layout_below="@id/select_title"
-            android:layout_toRightOf="@id/gain_button"
-            android:background="@drawable/rounded_select_button">
-        </Button>
-
-        <Button
-            android:id="@+id/healthy_button"
-            android:layout_width="105dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="-50dp"
-            android:text="Healthy"
-            android:textSize="12sp"
-            android:layout_below="@id/select_title"
-            android:layout_toRightOf="@id/bodybuild_button"
-            android:background="@drawable/rounded_select_button">
-        </Button>
+        </LinearLayout>
 
         <TextView
             android:id="@+id/category_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/loose_button"
+            android:layout_below="@id/button_layout"
             android:layout_marginTop="20dp"
             android:layout_marginHorizontal="25dp"
             android:text="CATEGORY"
@@ -207,128 +173,20 @@
             android:textSize="18sp"/>
 
         <RelativeLayout
-            android:id="@+id/category_yoga"
-            android:layout_width="wrap_content"
+            android:id="@+id/category_layout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="25dp"
             android:layout_below="@id/category_title">
 
-            <ImageView
-                android:id="@+id/category_one"
-                android:layout_width="wrap_content"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_category"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/category_yoga"/>
+                android:layout_alignParentTop="true"
+                tools:itemCount="5"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/category_one"
-                android:layout_centerInParent="true"
-                android:layout_marginTop="10dp"
-                android:text="Yoga"
-                android:textStyle="bold"/>
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/category_gym"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_below="@id/category_title"
-            android:layout_toRightOf="@id/category_yoga">
-
-            <ImageView
-                android:id="@+id/category_two"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/category_gym"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/category_two"
-                android:layout_centerInParent="true"
-                android:layout_marginTop="10dp"
-                android:text="Gym"
-                android:textStyle="bold"/>
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/category_cardio"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_below="@id/category_title"
-            android:layout_toRightOf="@id/category_gym">
-
-            <ImageView
-                android:id="@+id/category_three"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/category_cardio"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/category_three"
-                android:layout_centerInParent="true"
-                android:layout_marginTop="10dp"
-                android:text="Cardio"
-                android:textStyle="bold"/>
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/category_stretch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_below="@id/category_title"
-            android:layout_toRightOf="@id/category_cardio">
-
-            <ImageView
-                android:id="@+id/category_four"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/category_stretch"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/category_four"
-                android:layout_centerInParent="true"
-                android:layout_marginTop="10dp"
-                android:text="Stretch"
-                android:textStyle="bold"/>
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/category_fullbody"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginEnd="-50dp"
-            android:layout_below="@id/category_title"
-            android:layout_toRightOf="@id/category_stretch">
-
-            <ImageView
-                android:id="@+id/category_five"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/category_fullbody"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/category_five"
-                android:layout_centerInParent="true"
-                android:layout_marginTop="10dp"
-                android:text="Full Body"
-                android:textStyle="bold" />
         </RelativeLayout>
 
         <View
@@ -338,7 +196,7 @@
             android:layout_marginTop="12dp"
             android:layout_marginHorizontal="25dp"
             android:background="@color/black"
-            android:layout_below="@id/category_yoga">
+            android:layout_below="@id/category_layout">
         </View>
 
         <TextView

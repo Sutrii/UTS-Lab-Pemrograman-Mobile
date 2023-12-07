@@ -1,0 +1,17 @@
+<!-- item_select_recyclerview.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal">
+
+    <Button
+        android:id="@+id/select_button"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="17dp"
+        android:textSize="12sp"
+        android:background="@drawable/rounded_select_button">
+    </Button>
+</LinearLayout>

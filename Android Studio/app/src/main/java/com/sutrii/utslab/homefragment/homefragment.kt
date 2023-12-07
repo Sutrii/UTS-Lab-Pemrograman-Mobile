@@ -5,7 +5,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.sutrii.utslab.R
+import com.sutrii.utslab.adapter.ButtonAdapter
+import com.sutrii.utslab.adapter.CategoryAdapter
+import com.sutrii.utslab.data.DataButton
+import com.sutrii.utslab.data.DataCategory
+
+private lateinit var recyclerViewButtons: RecyclerView
+private lateinit var recyclerViewCategories: RecyclerView
+private lateinit var adapter: ButtonAdapter
+private lateinit var categoryAdapter: CategoryAdapter
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,8 +45,34 @@ class homefragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_homefragment, container, false)
+        val view = inflater.inflate(R.layout.fragment_homefragment, container, false)
+
+        // Sample data for the first RecyclerView
+        val items = listOf(
+            DataButton("Loose Weight", R.color.black, R.color.grey),
+            DataButton("Gain Weight", R.color.black, R.color.grey),
+            DataButton("Body Building", R.color.black, R.color.grey),
+            DataButton("Healthy", R.color.black, R.color.grey)
+        )
+        recyclerViewButtons = view.findViewById(R.id.recycler_buttons)
+        adapter = ButtonAdapter(items) {selectedItem -> }
+        recyclerViewButtons.adapter = adapter
+        recyclerViewButtons.layoutManager = LinearLayoutManager(activity, LinearLayoutManager. HORIZONTAL, false)
+
+        // Sample data for the second RecyclerView
+        val categoryItems = listOf(
+            DataCategory(R.drawable.category_yoga,"Yoga"),
+            DataCategory(R.drawable.category_gym,"Gym"),
+            DataCategory(R.drawable.category_cardio,"Cardio"),
+            DataCategory(R.drawable.category_stretch,"Stretch"),
+            DataCategory(R.drawable.category_fullbody,"Full Body"),
+        )
+        recyclerViewCategories = view.findViewById(R.id.recycler_category)
+        categoryAdapter = CategoryAdapter(categoryItems)
+        recyclerViewCategories.adapter = categoryAdapter
+        recyclerViewCategories.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
+
+        return view
     }
 
     companion object {
